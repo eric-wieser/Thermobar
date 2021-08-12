@@ -1,10 +1,10 @@
 [paths]
 source =
-    src/Thermobar
-    */site-packages/Thermobar
-    
+    src
+    */site-packages
+
 [run]
 branch = true
 source =
-    src
     Unit_tests
+    Thermobar
