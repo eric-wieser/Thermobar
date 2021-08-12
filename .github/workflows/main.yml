@@ -38,8 +38,9 @@ jobs:
       
     - name: Clean up coverage data
       run: |
-        coverage report
-        echo "---- And now after the hack ---"
+        # This is a workaround for the fact that the `[coverage:paths]` section
+        # of `setup.cfg` is not actually applies until we run `combine`; so we
+        # rename the report such that we can then "combine" it.
         mv .coverage .coverage.hack
         coverage combine
         coverage report
